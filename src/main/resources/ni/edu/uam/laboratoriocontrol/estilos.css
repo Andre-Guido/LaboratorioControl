@@ -1,0 +1,58 @@
+/*
+ * Estilos del catálogo de equipos: carbón y verde azulado.
+ * Modo claro: reglas base. Modo oscuro: clase "oscuro" en la raíz de la vista.
+ * Se cambian los colores base del tema de JavaFX (Modena) y cada control
+ * calcula a partir de ellos sus fondos, bordes y colores de texto.
+ * Las fuentes no se tocan: se quedan las que define el FXML.
+ */
+
+/* ---------- Modo claro ---------- */
+.root,
+.dialog-pane {
+    -color-acento: #138a74;
+
+    -fx-base: #e6ecea;
+    -fx-background: #f3f6f5;
+    -fx-control-inner-background: #ffffff;
+    -fx-accent: #138a74;
+    -fx-focus-color: #138a74;
+    -fx-faint-focus-color: rgba(19, 138, 116, 0.25);
+    -fx-selection-bar-non-focused: #cfe6e0;
+
+    -fx-dark-text-color: #1b2624;
+    -fx-mid-text-color: #1b2624;
+    -fx-light-text-color: #e4ecea;
+}
+
+/* ---------- Modo oscuro ---------- */
+.root.oscuro,
+.dialog-pane.oscuro {
+    -color-acento: #2bb39a;
+
+    -fx-base: #2f3636;
+    -fx-background: #1e2222;
+    -fx-control-inner-background: #232828;
+    -fx-accent: #2bb39a;
+    -fx-focus-color: #2bb39a;
+    -fx-faint-focus-color: rgba(43, 179, 154, 0.25);
+    -fx-selection-bar-non-focused: #3a4a46;
+}
+
+/* Texto guía (promptText) de los campos */
+.text-input {
+    -fx-prompt-text-fill: #7b8a86;
+}
+
+.root.oscuro .text-input {
+    -fx-prompt-text-fill: #8a9a96;
+}
+
+/* Título "Catálogo" */
+.titulo {
+    -fx-text-fill: -color-acento;
+}
+
+/* Botón Guardar: usa el color de acento como base */
+.boton-principal {
+    -fx-base: -color-acento;
+}
