@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.2">
+    <persistence-unit name="laboratorioPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- Entidades administradas por Hibernate -->
+        <class>ni.edu.uam.laboratoriocontrol.model.TipoEquipo</class>
+        <class>ni.edu.uam.laboratoriocontrol.model.Equipo</class>
+
+        <properties>
+            <!-- Conexión a PostgreSQL -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/bd_laboratorio_orm"/>
+            <property name="jakarta.persistence.jdbc.user" value="postgres"/>
+            <property name="jakarta.persistence.jdbc.password" value="${DB_PASSWORD}"/>
+
+            <!-- Las tablas se crean con el script SQL; Hibernate solo valida que coincidan -->
+            <property name="hibernate.hbm2ddl.auto" value="validate"/>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
